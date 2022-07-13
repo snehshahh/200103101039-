@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>
+            tHIS IS A TEXTAREA WEBSITE
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#i1").focus(function(){
+                    $(this).css("background-color","purple");
+                })
+                $("#i2").blur(function(){
+                    $(this).css("background-color","yellow");
+                })
+                $("#i3").keypress(function(){
+                    alert($(this).val());
+                })
+                $("#i4").keyup(function(){
+                    alert($(this).val());
+                })
+            })
+        </script>
+    </head>
+    <BODY>
+        <input type="text" id="i1" placeholder="click here for entertext">
+        <input type="text" id="i2" placeholder="click here for blur">
+        <input type="text" id="i3" placeholder="click here for key press">
+        <input type="text"id="i4" placeholder="click here for key Up">
+    </BODY>
+</html>

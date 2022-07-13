@@ -1,0 +1,19 @@
+<html>
+<head>
+     <title>
+        this is a slidedown
+     </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("#d1").click(function(){
+            $("#d2").slideDown("slow");
+        })
+    })
+  </script>
+</head>
+<body>
+    <div id="d1" style="height:55px;width:100%;background-color:red;text-align: center;padding-top: 45px;font-size:large">Click here to slide down</div>
+    <div id="d2" style="height:250px;width:100%;background-color: yellow;display:none;text-align: center;">displaying slide down</div>
+</body>
+</html>

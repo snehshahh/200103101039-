@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            this is a fade wedsite using jquery
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#b1").click(function(){
+                    $("#d1").fadeIn();
+                    $("#d2").fadeIn("slow");
+                    $("#d3").fadeIn(3000);
+
+                })
+                $("#b2").click(function(){
+                    $("#d1").fadeOut();
+                    $("#d2").fadeOut("slow");
+                    $("#d3").fadeOut(3000);
+
+                })
+                $("#b3").click(function(){
+                    $("#d1").fadeToggle();
+                    $("#d2").fadeToggle("slow");
+                    $("#d3").fadeToggle(3000);
+
+                })
+                $("#b4").click(function(){
+                    $("#d1").fadeTo("slow",0.16);
+                    $("#d2").fadeTo("slow",0.66);
+                    $("#d3").fadeto("slow",0.52);
+
+                })
+                
+            })
+
+        </script>
+    </head>
+    <body>
+        <button  id="b1">click here to fade in</button><HR>
+        <button  id="b2">click here to fade out</button><HR>
+        <button  id="b3">click here to fade toogle</button><HR>
+        <button  id="b4">click here to fadeto</button><HR>
+        <div id="d1" style="height:100px; width:200px;background-color:red;display:none;">DIVISION1</div>
+        <div id="d2" style="height:100px; width:200px;background-color:blue;display:none;">DIVISION1</div>
+        <div id="d3" style="height:100px; width:200px;background-color:yellow;display:none;">DIVISION1</div>
+
+        
+    </body>
+</html>

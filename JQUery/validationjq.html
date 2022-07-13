@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>
+            Validation
+        </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        var $FNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
+		var $FullNameRegEx = /^([a-zA-Z ]{2,40})$/;
+        var $EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/i;
+		var $ConNoRegEx = /^([0-9]{10})$/;
+        $(document).ready(function(){
+            $("#i1").blur(function(){
+                    $("txtidval").empty();
+                    if($(this).val=="" || $(this).val==null){
+                        $("#txtidval").html("(*) Name Required!");
+                    }
+                    else{
+                        if(!$(this).val().match($FullNameRegEx)){
+                            $("#txtidval").html("(*) Invalid Name");
+                        }
+                    }
+            });
+            $("#i1").keypress(function(e){
+                //alert("hello");
+                $("#txtidval").empty();
+                var flag=((e.which>=65 && e.which<=90) || (e.which>=97 && e.which<=121));
+                if(flag==false){
+                    $("#txtidval").html("Invalid input");
+                }
+                return flag;
+            });
+            $("#i2").blur(function(){
+                    $("contidval").empty();
+                    if($(this).val=="" || $(this).val==null){
+                        $("#contidval").html("(*) No Required!");
+                    }
+                    else{
+                        if(!$(this).val().match($ConNoRegEx)){
+                            $("#contidval").html("(*) Invalid No");
+                        }
+                    }
+            });
+            $("#i2").keypress(function(e){
+                $("#contidval").empty();
+                var flag=((e.which>=47 && e.which<=57));
+                if(flag==false){
+                    $("#contidval").html("Invalid input");
+                }
+                return flag;
+            });
+            $("#i3").blur(function(){
+                $("#emailidval").empty();
+                if($(this).val()=="" || $(this).val()==null){
+                    $("#emailidval").html("(*) email Required!");
+                }
+                else{
+                    if(!$(this).val().match($EmailIdRegEx)){
+                        $("#emailidval").html("invalid email");
+                    }
+ 
+                }
+            })
+            $("#i4").blur(function(){
+                $("#messidval").empty();
+                if($(this).val()=='' || $(this).val==null){
+                    $("#messidval").html("message empty");
+                }
+                else{
+                    if($("#i4").value().length>300){
+                        $("messidval").html("message length crossed");
+                    }
+                }
+            })
+            var TxtNameFlag=false,TxtContactNoFlag=false,TxtEmailIdFlag=false,TxtContactMsgFlag=false;
+            $("#submit").click(function(){
+                $("txtidval").empty();
+                    if($(this).val=="" || $(this).val==null)
+                    {
+                        $("#txtidval").html("(*) Name Required!");
+                        TxtNameFlag=false; 
+                    }
+                    else
+                    {
+                        if(!$(this).val().match($FullNameRegEx)){
+                            $("#txtidval").html("(*) Invalid Name");
+                            TxtNameFlag=false;
+                        }
+                        else{
+                            TxtNameFlag=true;
+                        }
+                    }
+                    $("contidval").empty();
+                    if($(this).val=="" || $(this).val==null){
+                        $("#contidval").html("(*) No Required!");
+                        TxtContactNoFlag=false;
+                    }
+                    else{
+                        if(!$(this).val().match($ConNoRegEx)){
+                            $("#contidval").html("(*) Invalid No");
+                            TxtContactNoFlag=false;
+                        }
+                        else{
+                            TxtContactNoFlag=true;
+                        }
+                $("#emailidval").empty();
+                if($(this).val()=="" || $(this).val()==null){
+                    $("#emailidval").html("(*) email Required!");
+                    TxtEmailIdFlag=false;
+                }
+                else{
+                    if(!$(this).val().match($EmailIdRegEx)){
+                        $("#emailidval").html("invalid email");
+                        TxtEmailIdFlag=false;
+                    }
+                    else{
+                        TxtEmailIdFlag=true;
+                    }
+ 
+                }
+                $("#messidval").empty();
+                if($(this).val()=='' || $(this).val==null){
+                    $("#messidval").html("message empty");
+                    TxtContactMsgFlag=false;
+                }
+                else{
+                    if($("#i4").value().length>300){
+                        $("messidval").html("message length crossed");
+                        TxtContactMsgFlag=false;
+                    }
+                    else{
+                        TxtContactMsgFlag=true;
+                    }
+                }
+                if(TxtNameFlag==true && TxtContactNoFlag==true && TxtEmailIdFlag==true,TxtContactMsgFlag==true){
+                    $("input,textarea").val("");
+                    alert("form submitted successfully");
+                }
+                else{
+                    alert("invalid input");
+                }
+             }   
+         })
+    </script>
+    </head>
+    <body>
+        <input type="text" placeholder="enter your name" id="i1">
+        <small id="txtidval"></small>
+        <hr>
+        <input type="text" placeholder="enter your Contact" id="i2">
+        <small id="contidval"></small>
+        <hr>
+        <input type="text" placeholder="enter your email" id="i3">
+        <small id="emailidval"></small>
+        <hr>
+        <input type="text" placeholder="ener your area" id="i4">
+        <small id="messidval"></small>
+        <hr>
+        <button type="submit" id="submit" value="submit"></button>
+    </body>

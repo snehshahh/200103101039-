@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>
+            hide and show
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){   
+                $("#Btnshow").attr("disabled",true);
+                $("#Btnhide").click(function(){
+                    if(confirm("are u sure?")){
+                        $("#Mydiv").hide(3000);
+						$(this).attr("disabled",true);
+						$("#Btnshow").attr("disabled",false);
+						$("#toogle").text("Show");
+                    }
+                })
+                $("#Btnshow").click(function(){
+					if(confirm("Are you sure..??"))
+					{
+						$("#Mydiv").show(3000);
+						$(this).attr("disabled",true);
+						$("#Btnhide").attr("disabled",false);
+						$("#toggle").text("Hide");
+					}
+				});
+                $("#toogle").click(function(){
+                    if(confirm("are you sure")){
+                        $("#Mydiv").toggle(3000);
+						($(this).text()=="Hide")
+							?($(this).text("Show"),$("#Btnhide").attr("disabled",true),$("#Btnshow").attr("disabled",false))
+							:($(this).text("Hide"),$("#Btnhide").attr("disabled",false),$("#Btnshow").attr("disabled",true))
+                    }
+                })
+                $("#zoomin").click(function(){
+					var MDH=parseInt($("#Mydiv").css("height"));
+					if(MDH<=500)
+					{
+						MDH+=10;
+						$("#Mydiv").css("height",MDH);
+						$("#Mydiv").css("width",MDH);
+					}
+					else{
+						alert("More than 500px is not possible.");
+					}
+				})
+				
+				$("#zoomout").click(function(){
+					var MDH=parseInt($("#Mydiv").css("height"));
+					if(MDH>=20)
+					{
+						MDH-=10;
+						$("#Mydiv").css("height",MDH);
+						$("#Mydiv").css("width",MDH);
+					}
+					else{
+						alert("Less than 20px is not possible.");
+					}
+				});
+               })
+               
+        </script>
+    </head>
+    <body>
+        <div id="Mydiv"  style="height:60px;width:60px;background-color: grey;"></div><hr>
+        <button id="Btnhide">hide</button>&nbsp;&nbsp;
+        <button id="Btnshow">show</button><hr>
+        <button id="toogle">Hide</button><hr>
+        <button id="zoomin" style="font-size: large;"><b>+</b></button>&nbsp;&nbsp;<button id="zoomout" style="font-size: large;"><b>-</b></button>   
+    </body>
+</html>
