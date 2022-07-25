@@ -1,0 +1,36 @@
+Bootstrap:
+
+Bootstrap is a product of twitter....full name is: TWITTER BOOTSTRAP.
+
+Bootstrap is nothing but the ready made library of CSS and JS.
+
+Screen sizes:
+
+ XS - SMART PHONE   |   SM - TABLET   |    MD - LAPTOP / DESKTOP   |  LG - LARGE SCREEN
+ (EXTRA SMALL)          (SMALL)            (MEDIUM)                   (LARGE)
+
+Bootstrap Grid Class:
+Container is a collection of Rows.... Row is a collection of Columns.
+In single row = 12 Columns.
+
+
+Classes:
+
+1) container (with margin-left & margin-right 15%) | container-fluid (without margin).
+
+2) row
+
+3) Width: Ideally 8.33% = 1 column.(100% / 12 = 8.33%)
+   col-xs-1 to 12 - 0px to 768px - Smart Phones
+   col-sm-1 to 12 - 769px to 992px - Tablets
+   col-md-1 to 12 - 993px to 1201px - Laptop / Desktop
+   col-lg-1 to 12 - 1201px >  - Large Screen
+
+4) Margin-Left: Ideally 8.33% = 1 column.(100% / 12 = 8.33%)
+   col-xs-offset-1 to 12 - 0px to 768px - Smart Phones
+   col-sm-offset-1 to 12 - 769px to 992px - Tablets
+   col-md-offset-1 to 12 - 993px to 1201px - Laptop / Desktop
+   col-lg-offset-1 to 12 >  - Large Screen
+
+5) In single row sum of total columns must be 12 and if its less than 12 than the left columns are free on right side.
+

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            media query for bootstrap css
+        </title>
+        <style>
+            #i1{
+                height:300px;
+                width: 300px;
+                background-color: blueviolet;
+            }
+            @media(min-width:500px)
+            {
+                #i1{width:80%;height:80%;background-color: red;}
+            }
+            @media(min-width:760px)
+            {
+                #i1{width:60%;height:60%;background-color: yellow;}
+            }
+            @media(min-width:992px)
+            {
+                #i1{width:40%;height:40%;background-color: green;}
+            }
+            @media(min-width:1200px)
+            {
+                #i1{width:30%;height:30%;background-color: palegoldenrod;}
+            }
+            @media(min-width:1300px)
+            {
+                #i1{width:10%;height:10%;background-color: whitesmoke;}
+            }
+            </style> 
+    </head>
+    <body>
+        <div id="i1">
+            Media query
+        </div>
+    </body>
+</html>
