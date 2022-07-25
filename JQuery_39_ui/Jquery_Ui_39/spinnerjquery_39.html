@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>
+            This is a spinner roll 
+        </title>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+      <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+      
+      <style type = "text/css">
+         #myvaluelist input 
+         {
+             width: 100px;
+             color:peachpuff;
+             font-weight:bold;
+         }
+      </style>
+      
+      <script type="text/javascript">
+          $(document).ready(function () {
+              $("#myvaluelist").spinner();
+          });
+    </script>
+    </head>
+    <body>
+        <div id = "example">
+            <input type = "text" id = "myvaluelist" value = "0" />
+         </div>
+    </body>
+</html>

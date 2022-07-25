@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+            This is a popup window
+        </title>
+        <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+     
+      <script type = "text/javascript">
+          $(document).ready(function(){
+              $("#mydiv").dialog({
+                  autoOpen: true,
+               });
+              $("#Mybutton").click(function () {
+                  $("#mydiv").dialog("open");
+              });
+          });
+        </script>
+    </head>
+    <body>
+        <div id = "mydiv" title="My Div Title..">
+             My Div Description
+             <input type="text" />
+        </div>
+        <button id = "mybutton">Click Here..</button>
+     </body>
+</html>
