@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            Date Picker
+        </title>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css" />
+      <script src = "https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+      <script>
+        $(document).ready(function(){
+            $("#mydbpick").datepicker({
+                showWeek:true,
+                yearSuffix:"(DOB)",
+                showAnim:"slide"
+            })
+            $("#mydbpick2").datepicker();
+            $("#mydbpick2").datepicker("show");
+        })
+      </script>
+    </head>
+    <body>
+        <p>Select your birthdate <input type="text" placeholder="Birthdate" id="mydbpick"> </p><hr>
+        <p>Select your birthdate <input type="text" placeholder="Birthdate" id="mydbpick2"> </p><hr>
+
+    </body>
+</html>
